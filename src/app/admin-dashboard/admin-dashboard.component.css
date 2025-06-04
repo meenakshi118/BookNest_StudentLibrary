@@ -1,0 +1,59 @@
+.admin-dashboard {
+  background-color: #f7f1e1; /* soft peach */
+  min-height: 100vh;
+  padding: 2rem 3rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.title {
+  background-color: #ffdab9; /* peach background */
+  color: #663300; /* dark brown text */
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 1.5rem 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(255, 182, 93, 0.5);
+  margin-bottom: 3rem;
+  user-select: none;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.panel-card {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(255, 182, 93, 0.15);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  user-select: none;
+}
+
+.panel-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(255, 182, 93, 0.35);
+}
+
+.panel-icon {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 1rem;
+  filter: drop-shadow(1px 1px 1px #d28a00);
+}
+
+.panel-label {
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: #663300;
+}
