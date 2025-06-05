@@ -1,0 +1,42 @@
+<div class="main-container">
+  <h1 class="app-title">{{ title }}</h1>
+
+  <!-- Welcome Message -->
+<p class="welcome-msg">Welcome, user! Log in to manage your books and more.</p>
+
+<!-- Login Button -->
+<button class="login-button" (click)="toggleLogin()">
+  {{ showLogin ? 'Hide Login' : 'Login' }}
+</button>
+
+
+<!-- Conditional Login Component -->
+<div *ngIf="showLogin">
+  <app-login></app-login>
+</div>
+
+<!-- Show this info only when login is hidden -->
+<div *ngIf="!showLogin" class="info-section">
+    
+  <h2>Explore a World of Books 📚</h2>
+  <p>
+    Discover, borrow, and manage a vast collection of books right from your dashboard. 
+    <br>Our library management system helps you keep track of issued books, due dates, 
+    and more. Join us to streamline your reading journey!<br><br>
+    <span class="highlight-quote">“Today a reader, tomorrow a leader.”</span>
+  </p>
+</div>
+
+  <footer class="about-us">
+  <h3>About Us</h3>
+  <p>
+    This Library Management System is designed to help users efficiently manage book records,
+    track issued books, and streamline library operations.
+  </p>
+  <p>Contact us: library&#64;gmail.com</p>
+</footer>
+
+</div>
+<!-- app.component.html -->
+<router-outlet></router-outlet>
+

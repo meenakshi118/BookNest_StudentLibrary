@@ -1,0 +1,30 @@
+<div class="admin-dashboard">
+  <h1 class="title">Welcome, Admin</h1>
+
+  <div class="dashboard-grid">
+    <!-- Student Panel Icon -->
+    <div class="panel-card" (click)="openStudentPanel()">
+      <img src="assets/images/admin1.png" alt="Student Icon" class="panel-icon" />
+      <span class="panel-label">Students</span>
+    </div>
+
+    <!-- Book Panel Icon -->
+    <div class="panel-card" (click)="openBookPanel()">
+      <img src="assets/images/admin2.png" alt="Book Icon" class="panel-icon" />
+      <span class="panel-label">Books</span>
+    </div>
+
+    <!-- Assign Book Panel Icon -->
+    <div class="panel-card" (click)="openAssignBookPanel()">
+      <img src="assets/images/admin3.png" alt="Assign Book" class="panel-icon" />
+      <span class="panel-label">Assign Books</span>
+    </div>
+
+    <!-- Return Book Panel Icon -->
+    <div class="panel-card" (click)="returnBookPanel()">
+      <img src="assets/images/admin4.png" alt="Return Book" class="panel-icon" />
+      <span class="panel-label">Return Books</span>
+    </div>
+    <!-- Add more panels as needed -->
+  </div>
+</div>

@@ -1,0 +1,290 @@
+/* Container and Layout */
+.container {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f7fafd;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.grid {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Left Panel - Smaller */
+.panel:first-child {
+  flex: 0 0 30%;
+  background: #e1f5fe;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Right Panel - Larger, Scrollable */
+.panel:last-child {
+  flex: 1;
+  background: #e0f7f9;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+
+  max-height: 85vh;
+  
+  /* Allow both vertical and horizontal scrolling */
+  overflow-y: auto;
+  overflow-x: auto;
+
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Table Wrapper - Scroll container for the table */
+.table-wrapper {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 500px; /* or inherit from parent if needed */
+  max-width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+/* Table */
+.table-wrapper table {
+  min-width: 1200px; /* wider than container to force horizontal scroll */
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* Table cells */
+table th,
+table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Headings */
+h2 {
+  font-size: 1.6rem;
+  color: #0d47a1;
+  margin-bottom: 1rem;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  display: block;
+  color: #333;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #cfd8dc;
+  border-radius: 8px;
+  background: #f9fbfc;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #64b5f6;
+  outline: none;
+  background-color: #ffffff;
+}
+
+/* Form Validation */
+div.ng-invalid.ng-touched {
+  color: #e53935;
+  font-size: 0.85rem;
+}
+
+/* Buttons */
+button {
+  padding: 0.5rem 1.1rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  background-color: #0d47a1;
+  color: #fff;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover:not(:disabled) {
+  background-color: #1565c0;
+}
+
+button.delete-btn {
+  background-color: #e53935;
+}
+
+button.delete-btn:hover {
+  background-color: #c62828;
+}
+
+button.edit-btn {
+  background-color: #00897b;
+}
+
+button.edit-btn:hover {
+  background-color: #00695c;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Search Box */
+.search-box {
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+  width: 100%;
+  background-color: #f7faff;
+  transition: border-color 0.3s ease;
+}
+
+.search-box:focus {
+  border-color: #4a90e2;
+  outline: none;
+  background-color: #eaf2ff;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+thead {
+  background-color: #0288d1;
+  color: white;
+}
+
+thead th {
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+tbody td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #eee;
+  color: #333;
+}
+
+tbody tr:hover {
+  background-color: #f1faff;
+}
+
+td:last-child {
+  white-space: nowrap;
+}
+
+/* Scrollbar styling */
+.table-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.table-wrapper:hover::-webkit-scrollbar-thumb {
+  background-color: #90caf9;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+  background-color: #64b5f6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .grid {
+    flex-direction: column;
+  }
+
+  .panel:first-child,
+  .panel:last-child {
+    flex: 1 1 100%;
+  }
+
+  table {
+    font-size: 0.85rem;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody td {
+    display: block;
+    text-align: right;
+    position: relative;
+    padding-left: 50%;
+    border-bottom: 1px solid #ddd;
+  }
+
+  tbody td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 1rem;
+    width: 45%;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+  }
+  /* Normal Add button style (already exists) */
+button[type="submit"] {
+  background-color: #0d47a1; /* blue */
+  color: #fff;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+  background-color: #1565c0;
+}
+
+/* Update button style */
+button[type="submit"].update-mode {
+  background-color: #00897b; /* teal green */
+}
+
+button[type="submit"].update-mode:hover:not(:disabled) {
+  background-color: #00695c;
+}
+.success-message {
+  margin-top: 1rem;
+  color: #388e3c; /* green */
+  font-weight: 600;
+}
+
+}

@@ -1,0 +1,33 @@
+<div class="history-container">
+  <h2>📚 Book Assignment History for <span class="highlight">{{ studentName }}</span></h2>
+
+  <table *ngIf="history.length > 0" class="history-table">
+     <thead>
+      <tr>
+        <th>🔖 ISBN</th>
+        <th>📅 Issued Date</th>
+        <th>⏳ Due Date</th>
+        <th>✅ Returned Date</th>
+        <th>📌 Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let record of history">
+        <td>{{ record.bookIsbn }}</td>
+        <td>{{ record.issueDate | date: 'shortDate' }}</td>
+        <td>{{ record.dueDate | date: 'shortDate' }}</td>
+        <td>{{ record.returnDate ? (record.returnDate | date: 'shortDate') : 'Not Returned' }}</td>
+        <td>
+          <span [ngClass]="{
+            'status-issued': record.status === 'ISSUED',
+            'status-returned': record.status === 'RETURNED'
+          }">
+            {{ record.status }}
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="history.length === 0" class="no-history">⚠️ No history found for this student.</p>
+</div>

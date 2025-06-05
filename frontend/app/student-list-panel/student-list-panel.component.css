@@ -1,0 +1,65 @@
+.student-list-panel {
+  padding: 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.search-bar input {
+  width: 60%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.dashboard-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.panel-card {
+  width: 200px;
+  padding: 15px;
+  border-radius: 12px;
+  background-color: #f8f9fa;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.panel-card:hover {
+  transform: scale(1.05);
+}
+
+.panel-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.panel-label {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.panel-sub-label {
+  display: block;
+  font-size: 14px;
+  color: gray;
+}

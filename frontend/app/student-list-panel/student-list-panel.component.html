@@ -1,0 +1,26 @@
+<div class="student-list-panel">
+  <h1 class="title">Select student to assign books</h1>
+
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <input type="text" placeholder="Search by name or email" [(ngModel)]="searchQuery" />
+  </div>
+
+  <!-- Student Cards -->
+  <div class="dashboard-grid">
+    <div
+      class="panel-card"
+      *ngFor="let student of filteredStudents()"
+      (click)="selectStudent(student)"
+    >
+      <img 
+  [src]="getProfileImageUrl(student.id)" 
+  alt="Profile Photo" 
+  class="panel-icon" 
+  (error)="onImageError($event)" 
+/>
+      <span class="panel-label">{{ student.name }}</span>
+      <span class="panel-sub-label">{{ student.email }}</span>
+    </div>
+  </div>
+</div>
