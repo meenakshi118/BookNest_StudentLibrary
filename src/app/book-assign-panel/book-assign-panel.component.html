@@ -14,6 +14,13 @@
     <p><strong>Name:</strong> {{ selectedStudent.name }}</p>
     <p><strong>Email:</strong> {{ selectedStudent.email }}</p>
     
+    <button 
+  class="history-btn" 
+  *ngIf="selectedStudent" 
+  (click)="viewHistory(selectedStudent.id)">
+  View History
+</button>
+
   </div>
 
   

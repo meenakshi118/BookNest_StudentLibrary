@@ -22,11 +22,17 @@ export class AdminDashboardComponent {
   openBookPanel() {
     this.router.navigate(['/book-detail-panel']);
   }
+  
   openAssignBookPanel() {
-    this.router.navigate(['/student-list-panel']);
-  }
-  returnBookPanel(){
-    this.router.navigate(['/return-book-panel'])
-  }
+  this.router.navigate(['/student-list-panel'], {
+    queryParams: { mode: 'assign' }
+  });
+}
+
+returnBookPanel() {
+  this.router.navigate(['/student-list-panel'], {
+    queryParams: { mode: 'return' }
+  });
+}
 }
 

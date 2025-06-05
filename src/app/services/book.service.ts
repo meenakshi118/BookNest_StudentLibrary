@@ -47,4 +47,5 @@ export class BookService {
   deleteBook(id: string): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
+  
 }

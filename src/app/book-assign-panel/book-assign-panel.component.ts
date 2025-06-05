@@ -1,4 +1,4 @@
-// book-assign.component.ts
+import { Router } from '@angular/router'; 
 import { ActivatedRoute } from '@angular/router';
 import { Component, Input, OnInit } from '@angular/core';
 import { BookService } from '../services/book.service';
@@ -14,6 +14,8 @@ import { FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule } 
   templateUrl: './book-assign-panel.component.html',
   styleUrls: ['./book-assign-panel.component.css']
 })
+
+
 export class BookAssignPanelComponent implements OnInit {
   @Input() selectedStudent: any;
   books: any[] = [];
@@ -22,6 +24,7 @@ export class BookAssignPanelComponent implements OnInit {
 
    constructor(
     private route: ActivatedRoute,
+    private router: Router, // Inject Router
     private bookService: BookService,
     private libraryService: LibraryService,
     private studentService: StudentService //  Inject
@@ -40,6 +43,9 @@ export class BookAssignPanelComponent implements OnInit {
     this.fetchBooks();
   }
 
+  viewHistory(studentId: string) {
+  this.router.navigate(['/student-history', studentId]);
+}
   
   fetchBooks() {
     this.bookService.getBooks().subscribe(data => {

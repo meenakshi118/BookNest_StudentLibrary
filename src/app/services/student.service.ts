@@ -33,9 +33,10 @@ export class StudentService {
     return this.http.get<Student[]>(this.apiUrl);
   }
 
-  getStudentById(id: string) {
-  return this.http.get(`${this.apiUrl}/info/${id}`); // Adjust API path as needed
+  getStudentById(id: string): Observable<Student> {
+  return this.http.get<Student>(`${this.apiUrl}/info/${id}`);
 }
+
 
   add(formData: FormData): Observable<Student> {
     return this.http.post<Student>(`${this.apiUrl}/add`, formData);

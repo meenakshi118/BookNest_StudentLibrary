@@ -28,9 +28,15 @@ export class LibraryService {
     return this.http.get<any[]>(this.baseUrl);
   }
 
+  
 
   // Get books assigned to a student
   getAssignedBooks(studentId: number): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/assigned/${studentId}`);
   }
+  
+  getStudentHistory(studentId: string): Observable<any[]> {
+  return this.http.get<any[]>(`${this.baseUrl}/history/${studentId}`);
+}
+
 }
